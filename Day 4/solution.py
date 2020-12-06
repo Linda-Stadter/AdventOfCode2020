@@ -1,9 +1,10 @@
 import re
+input_path = "input.txt"
 
 
-def check_passport_validity(file_path, patterns):
+def check_passport_validity(patterns):
 
-    with open(file_path, "r") as input_file:
+    with open(input_path, "r") as input_file:
         input_lines = input_file.readlines()
         input_lines.append("\n")
         input_lines = [x.strip() for x in input_lines]
@@ -36,7 +37,7 @@ def part_one():
     pid = "pid:."
     patterns = [birth, issue, expiration, height, hair, eye, pid]
 
-    print(check_passport_validity("input.txt", patterns))
+    print(check_passport_validity(patterns))
 
 
 def part_two():
@@ -50,7 +51,7 @@ def part_two():
     pid = "pid:[0-9]{9}($|\s)"
     patterns = [birth, issue, expiration, height, hair, eye, pid]
 
-    print(check_passport_validity("input.txt", patterns))
+    print(check_passport_validity(patterns))
 
 
 part_one()

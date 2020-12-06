@@ -19,15 +19,15 @@ def check_trees(slope_x, slope_y):
     return trees
 
 
+def part_one():
+
+    print(check_trees(3, 1))
+
+
 def part_two():
 
     print(check_trees(1, 1) * check_trees(3, 1) *
           check_trees(5, 1) * check_trees(7, 1) * check_trees(1, 2))
-
-
-def part_one():
-
-    print(check_trees(3, 1))
 
 
 part_one()
