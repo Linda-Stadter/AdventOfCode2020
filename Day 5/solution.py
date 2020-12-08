@@ -1,5 +1,12 @@
-import re
 input_path = "input.txt"
+
+
+def read_input():
+    with open(input_path, "r") as input_file:
+        input_lines = input_file.readlines()
+        input_lines.append("\n")
+        input_lines = [x.strip() for x in input_lines]
+    return input_lines
 
 
 def binary_space_search(line, lower_key):
@@ -16,11 +23,7 @@ def binary_space_search(line, lower_key):
 
 def part_one():
     all_ids = []
-
-    with open(input_path, "r") as input_file:
-        input_lines = input_file.readlines()
-        input_lines.append("\n")
-        input_lines = [x.strip() for x in input_lines]
+    input_lines = read_input()
 
     for line in input_lines:
         row = binary_space_search(line[:7], "F")

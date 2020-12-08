@@ -2,15 +2,19 @@ import re
 input_path = "input.txt"
 
 
-def check_passport_validity(patterns):
-
+def read_input():
     with open(input_path, "r") as input_file:
         input_lines = input_file.readlines()
         input_lines.append("\n")
         input_lines = [x.strip() for x in input_lines]
+    return input_lines
 
+
+def check_passport_validity(patterns):
     valid = 0
     passport = []
+    input_lines = read_input()
+
     for line in input_lines:
         if line != "":
             passport.append(line)
@@ -27,7 +31,6 @@ def check_passport_validity(patterns):
 
 
 def part_one():
-
     birth = "byr:."
     issue = "iyr:."
     expiration = "eyr:."
@@ -41,7 +44,6 @@ def part_one():
 
 
 def part_two():
-
     birth = "byr:((19[2-9][0-9])|(200[0-2]))($|\s)"
     issue = "iyr:((201[0-9])|(2020))($|\s)"
     expiration = "eyr:((202[0-9])|(2030))($|\s)"
