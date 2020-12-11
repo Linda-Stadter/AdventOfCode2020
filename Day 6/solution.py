@@ -9,8 +9,7 @@ def read_input():
     return input_lines
 
 
-def part_one():
-    input_lines = read_input()
+def part_one(input_lines):
     group_counts = []
     yes_answers = set()
 
@@ -25,8 +24,7 @@ def part_one():
     print(sum(group_counts))
 
 
-def part_two():
-    input_lines = read_input()
+def part_two(input_lines):
     group_counts = []
     yes_answers = []
 
@@ -43,5 +41,6 @@ def part_two():
     print(sum(group_counts))
 
 
-part_one()
-part_two()
+input_lines = read_input()
+part_one(input_lines)
+part_two(input_lines)
