@@ -1,5 +1,4 @@
 import re
-import math
 input_path = "input.txt"
 
 
